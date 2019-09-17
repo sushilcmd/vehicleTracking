@@ -21,7 +21,7 @@ exports.distance = async function(req, res) {
     try {
         const ip = req["host"];
         const vehicleMeta = req["vehicleMeta"]
-        const data = init(vehicleMeta, "139.5.253.157")
+        const data = init(vehicleMeta, ip)
         const response = createResponse([`Total distance is ${data["distance"]} KM`, "D200", true], data)
         res.json(response);
     } catch (error) {
